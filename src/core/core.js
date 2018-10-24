@@ -496,6 +496,7 @@ class VConsole {
       }
     });
     // end init
+    plugin.isReady = true;
     plugin.trigger('ready');
   }
 
@@ -505,7 +506,9 @@ class VConsole {
    */
   _triggerPluginsEvent(eventName) {
     for (let id in this.pluginList) {
-      this.pluginList[id].trigger(eventName);
+      if (this.pluginList[id].isReady) {
+        this.pluginList[id].trigger(eventName);
+      }
     }
   }
 
@@ -515,7 +518,7 @@ class VConsole {
    */
   _triggerPluginEvent(pluginName, eventName) {
     let plugin = this.pluginList[pluginName];
-    if (plugin) {
+    if (!!plugin && plugin.isReady) {
       plugin.trigger(eventName);
     }
   }
@@ -690,7 +693,7 @@ class VConsole {
     $.removeClass($.all('.vc-tool', this.$dom), 'vc-toggle');
     $.addClass($.all('.vc-tool-' + tabID, this.$dom), 'vc-toggle');
     // trigger plugin event
-    this._triggerPluginEvent(this.activedTab, 'hide');
+    this.activedTab && this._triggerPluginEvent(this.activedTab, 'hide');
     this.activedTab = tabID;
     this._triggerPluginEvent(this.activedTab, 'show');
   }

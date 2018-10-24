@@ -1,11 +1,21 @@
 English | [简体中文](./CHANGELOG_CN.md)
 
-#### V3.1.0-dev (2017-12-xx)
+#### V3.2.0 (2018-04-10)
+
+- [FEATURE] Support `console.time()` and `console.timeEnd()`.
+- [FEATRUE] Add `disableLogScrolling` (in `vConsole.option`).
+- [FIX] Fix `setOption()` error.
+- [FIX] Fix cookies' value wrong display.
+- [FIX] Fix "Uncaught InvalidStateError". (by @fireyy)
+
+
+#### V3.1.0 (2017-12-27)
 
 - [FEATURE] Add `vConsole.showSwitch()` and `vConsole.hideSwitch()` methods, see [Public Properties & Methods](./doc/public_properties_methods.md).
 - [FEATURE] Add `onReady` and `onClearLog` callback function to `vConsole.option`.
 - [FEATURE] Auto clear logs when `console.clear()` is called.
 - [FIX] Fix `\r` error when build in Windows.
+- [FIX] Fix `Symbol` error in iOS8 or other old OS.
 
 
 #### V3.0.0 (2017-09-27)

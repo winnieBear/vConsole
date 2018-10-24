@@ -1,11 +1,21 @@
 [English](./CHANGELOG.md) | 简体中文
 
-#### V3.1.0-dev (2017-12-xx)
+#### V3.2.0 (2018-04-10)
+
+- 【特性】支持 `console.time()` 及 `console.timeEnd()`。
+- 【特性】新增 `disableLogScrolling` 配置项（`vConsole.option`），用于禁止新日志引起的自动滚动到底部。
+- 【修复】修复初始化后立即调用 `setOption` 引起的错误。
+- 【修复】修复 cookies 显示错误的问题。
+- 【修复】修复 "Uncaught InvalidStateError" 错误。 (by @fireyy)
+
+
+#### V3.1.0 (2017-12-27)
 
 - 【特性】新增 `vConsole.showSwitch()` 及 `vConsole.hideSwitch()` 方法，请查阅[公共属性及方法](./doc/public_properties_methods_CN.md)。
 - 【特性】新增 `onReady` 及 `onClearLog` 回调方法，位于 `vConsole.option`。
 - 【特性】调用 `console.clear` 时将自动清除面板中的日志。
 - 【修复】修复 Windows 下构建引起的 `\r` 转义问题。
+- 【修复】修复 iOS8 或其它低版本系统中的 `Symbol` 错误。
 
 
 #### V3.0.0 (2017-09-27)
